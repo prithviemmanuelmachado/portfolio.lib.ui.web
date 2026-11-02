@@ -1,0 +1,13 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    uses: prithviemmanuelmachado/portfolio.infra/.github/workflows/semantic-version.yml@main
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
