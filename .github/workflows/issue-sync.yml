@@ -6,9 +6,18 @@ on:
     branches: [main, feature]
 
 jobs:
-  sync:
+  sync-feature:
     uses: prithviemmanuelmachado/portfolio.infra/.github/workflows/issue-sync.yml@main
     with:
       project-number: 1
+      target-branch: feature
+    secrets:
+      projects-token: ${{ secrets.PROJECTS_TOKEN }}
+
+  sync-main:
+    uses: prithviemmanuelmachado/portfolio.infra/.github/workflows/issue-sync.yml@main
+    with:
+      project-number: 1
+      target-branch: main
     secrets:
       projects-token: ${{ secrets.PROJECTS_TOKEN }}
